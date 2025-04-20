@@ -14,6 +14,9 @@ app.use(cors())
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/" , (req,res)=>{
+  res.status(200).json({message: "Welcome to the Chat App API"});
+})
 
 app.listen(PORT,()=>{
   console.log("Server is Running On Port: " + PORT);
